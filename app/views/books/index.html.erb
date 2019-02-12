@@ -1,0 +1,64 @@
+<div class="container">
+
+	<% if flash[:notice] %>
+		<p class="notice"><%= flash[:notice] %></p>
+	<% end %>
+
+	<h2>Books</h2>
+
+	<table>
+
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th>Body</th>
+				<th colspan="3"></th>
+			</tr>
+		</thead>
+
+		<% @books.each do |book| %>
+
+			<tbody>
+				<tr>
+					<td>
+						<%= link_to book.title, book_path(book.id) %>
+					</td>
+					<td>
+						<%= book.body %>
+					</td>
+					<td>
+						<%= link_to "Show", book_path(book.id), class:"show_#{book.id}" %>
+						<span>|</span>
+						<%= link_to "Edit", edit_book_path(book.id), class:"edit_#{book.id}" %>
+						<span>|</span>
+						<%= link_to "Destroy", destroy_book_path(book.id), method: :delete, "data-confirm" => "Are you sure?", class:"destroy_#{book.id}"  %>
+					</td>
+				</tr>
+			</tbody>
+
+		<% end %>
+
+	</table>
+
+
+	<h2>New book</h2>
+
+	<%= form_for(@book) do |f| %>
+
+		<% if flash[:error] %>
+				<div class="form_error">
+					<%= flash[:error] %>
+				</div>
+		<% end %>
+
+		<h4>Title</h4>
+		<%= f.text_field :title, class:'book_title' %>
+
+		<h4>Body</h4>
+		<%= f.text_area :body, class:'book_body' %>
+
+		<%= f.submit 'Create Book', class:'create_book' %>
+
+	<% end %>
+
+</div>

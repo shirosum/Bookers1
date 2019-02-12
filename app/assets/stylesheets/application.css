@@ -1,0 +1,93 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+	color:black;
+}
+a{
+	text-decoration:none;
+}
+.container{
+	font-size:13px;
+	line-height:20px;
+	margin:33px;
+}
+
+h1{
+	display:block;
+	font-size:28px;
+	margin:0 10px 10px 0;
+}
+h2{
+	display:block;
+	font-size:24px;
+	padding-bottom:8px;
+}
+h4{
+	display:block;
+	margin-top:5px;
+}
+p{
+	display:block;
+	margin:33px;
+}
+.notice{
+	color:green;
+}
+.start,.create_book,.update_book{
+	display:block;
+}
+.start{
+	margin-left:33px;
+}
+.update_book{
+	margin-bottom:5px;
+}
+
+table{
+	display:table;
+	border-collapse:separate;
+	border-spacing:2px;
+	margin-bottom:26px;
+}
+td,th{
+	display:table-cell;
+}
+th{
+	text-align:center;
+}
+td{
+	padding:5px;
+}
+
+.book_title,.book_body{
+	margin-bottom:7px;
+}
+.book_detail{
+	display:block;
+	margin:25px 33px;
+}
+.form_error{
+	width:320px;
+	border:2px solid red;
+	padding:10px;
+	margin:10px 0 20px;
+	background-color:#f0f0f0;
+}

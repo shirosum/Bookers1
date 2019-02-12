@@ -1,0 +1,19 @@
+<div class="container">
+
+	<% if flash[:notice] %>
+		<p class="notice"><%= flash[:notice] %></p>
+	<% end %>
+
+	<h4 class="book_detail">
+		Title: <%= @book.title %>
+	</h4>
+
+	<h4 class="book_detail">
+		Body: <%= @book.body %>
+	</h4>
+
+	<%= link_to "Edit", edit_book_path(@book.id), class:"edit_#{@book.id}" %>
+	<span>|</span>
+	<%= link_to "Back", '/books', class:'back' %>
+
+</div>
